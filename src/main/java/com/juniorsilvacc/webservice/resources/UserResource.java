@@ -13,7 +13,7 @@ import com.juniorsilvacc.webservice.entities.User;
 import com.juniorsilvacc.webservice.services.UserService;
 
 @RestController
-@RequestMapping(value = "/users/")
+@RequestMapping(value = "/users")
 public class UserResource {
 	
 	@Autowired
