@@ -1,5 +1,6 @@
 package com.juniorsilvacc.webservice.entities;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -13,9 +14,15 @@ import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
+//Set -> O produto não pode ter a mesma categoria mais de uma vez
+//New -> Garantir que a coleção não comece valendo null, começa vazia, porém, estanciada
+//HashSet -> Por que o set é uma interface, ela não pode ser estanciada, precisa usar uma classe correspondente a interface.
+
 @Entity
 @Table(name = "tb_product")
-public class Product {
+public class Product implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
